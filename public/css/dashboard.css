@@ -28,7 +28,7 @@
     text-align: center;
     margin: 50px auto;
     margin-bottom: 20px;
-    box-shadow: 0 0 100px rgba( 0, 0, 0, 0.1);
+    box-shadow: 0 0 100px rgb(0, 0, 0, 0.3);
     max-width: 1000px;
     
 }
