@@ -11,21 +11,26 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('images', function (Blueprint $table) {
-    $table->id();
-    $table->string('nama');
-    $table->string('path');
-    $table->timestamps();
-});
-
-        
+        Schema::table('barangs', function (Blueprint $table) {
+            $table->string('image')->nullable()->after('nama_barang');
+        });
     }
+
+    public function down():void
+    {
+        Schema::table('barangs', function (Blueprint $table){
+            $table->dropColumn('image');
+        });
+    }
+
 
     /**
      * Reverse the migrations.
      */
-    public function down(): void
-    {
-        Schema::dropIfExists('images');
-    }
+//     public function down(): void    
+//     {
+//         Schema::table('barangs', function (Blueprint $table) {
+//             $table->dropColumn('image');
+//      
+
 };
