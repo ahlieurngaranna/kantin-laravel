@@ -1,0 +1,47 @@
+.image {
+    width: 85px; /* Lebar gambar */
+    height: auto; /* Tinggi gambar akan disesuaikan sesuai proporsi aslinya */  
+}
+
+.garis{
+    border: none; /* Hapus garis bawaan */
+    border-top: 3px solid black; /* Ketebalan 3px, warna hitam */
+    margin: 10px 0; /* Untuk memberi jarak di atas dan di bawah garis */
+}
+
+.menu-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.menu-wrapper form {
+    margin-left: auto; /* Untuk memindahkan form ke sisi kanan */
+}
+
+.menu-wrapper input[type="text"],
+.menu-wrapper button {
+    margin-left: 10px; /* Untuk memberikan jarak antara input dan tombol */
+}
+
+.menulist{
+    text-align: center;
+    margin: 50px auto;
+    margin-bottom: 20px;
+    box-shadow: 0 0 100px rgba( 0, 0, 0, 0.1);
+    max-width: 1000px;
+    
+}
+
+.ukurangambarmenu{
+    width: 220px;
+    height: 200px;
+}
+
+.footer{
+    text-align: center;
+    background-color: rgb(159, 179, 179);
+}
+
+
+
