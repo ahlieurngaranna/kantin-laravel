@@ -1,0 +1,22 @@
+.header{
+    text-align: center;
+}
+
+.garis{
+    border: none; /* Hapus garis bawaan */
+    border-top: 3px solid black; /* Ketebalan 3px, warna hitam */
+    margin: 10px 0; /* Untuk memberi jarak di atas dan di bawah garis */
+    margin-bottom: 30px;
+}
+
+.nama_barang{
+    width: 100%; 
+    border: 2px solid black; 
+    border-radius: 5px;
+    font-style: italic;
+}
+
+.namabarang{
+    font-family: 'Arial';
+    font-size: larger;
+}

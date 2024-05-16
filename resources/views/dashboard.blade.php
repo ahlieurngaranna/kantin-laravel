@@ -14,7 +14,7 @@
 <body>
     <header>
     <header>
-    <a href="{{ route('images.create') }}">Tambah Gambar</a>
+    <a href="{{ route('barang.create') }}">Tambah Barang</a>
 </header>
 
     </header>
