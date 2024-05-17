@@ -36,3 +36,4 @@ Route::get('/barang', [BarangController::class, 'index'])->name('barang.index');
 
 
 
+

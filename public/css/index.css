@@ -5,13 +5,16 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    background-image: url("/images/zenitsu.jpg");
+    background-size: 100%;   
+    
 }
 
 .container {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #9c9696;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -37,7 +40,7 @@ h1 {
 }
 
 .table-container th {
-    background-color: #f2f2f2;
+    background-color: #9c9696
 }
 
 .add-button {
@@ -53,3 +56,4 @@ h1 {
 .add-button:hover {
     background-color: #45a049;
 }
+    

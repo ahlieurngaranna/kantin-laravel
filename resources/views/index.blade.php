@@ -15,6 +15,7 @@
                 <thead>
                     <tr>
                         <th>Nama Barang</th>
+                        <th>Gambar</th>
                         <th>Harga</th>
                         <th>Stock</th>
                         <th>Deskripsi</th>
@@ -24,6 +25,9 @@
                     @foreach($barang as $item)
                     <tr>
                         <td>{{ $item->nama_barang }}</td>
+                        <td><img src="{{ asset($item->gambar) }}" alt="Gambar Barang">
+        <h3>{{ $item->nama_barang }}</h3></td>
+
                         <td>{{ $item->harga }}</td>
                         <td>{{ $item->stock }}</td>
                         <td>{{ $item->deskripsi }}</td>

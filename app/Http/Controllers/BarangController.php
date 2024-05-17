@@ -27,19 +27,18 @@ class BarangController extends Controller
     // Method lainnya...
 
     public function store(Request $request)
-    {
-        // Validasi input
-        $validatedData = $request->validate([
-            'nama_barang' => 'required|string|max:255',
-            'harga' => 'required|integer|min:0',
-            'stock' => 'required|integer|min:0',
-            'deskripsi' => 'required|string',
-        ]);
+{
+    // Validasi input
+    $validatedData = $request->validate([
+        'nama_barang' => 'required|string|max:255',
+        'harga' => 'required|integer|min:0',
+        'stock' => 'required|integer|min:0',
+        'deskripsi' => 'required|string',
+    ]);
 
-        // Simpan barang baru ke dalam database
-        Barang::create($validatedData);
+    // Simpan barang baru ke dalam database
+    Barang::create($validatedData);
 
-        // Redirect ke halaman index barang dengan pesan sukses
-        return redirect()->route('barang.index')->with('success', 'Barang berhasil ditambahkan.');
-    }
-}
+    // Redirect ke halaman index barang dengan pesan sukses
+    return redirect()->route('barang.index')->with('success', 'Barang berhasil ditambahkan.');
+}}
