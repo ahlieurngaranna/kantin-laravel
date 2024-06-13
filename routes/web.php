@@ -1,10 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\SearchController;
-use App\Http\Controllers\ImageController;
+use App\Http\Controllers\DeskripsiController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BarangController;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,23 +18,23 @@ use App\Http\Controllers\BarangController;
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('welcome');
 });
 
-Route::get('dashboard',[DashboardController::class,'index'])->name('index'); /*DASHBOARD*/
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/search', [SearchController::class, 'search'])->name('search'); /*ROUTE PENCARIAN/SEARCH */
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-Route::post('/images', 'ImageController@store')->name('image.store');
-Route::resource('images', 'ImageController');
-Route::get('tambah',[ImageController::class,'img'])->name('img');
-
-// Rute untuk menampilkan formulir tambah barang
-Route::get('/barang/create', [BarangController::class, 'create'])->name('barang.create');
-// Rute untuk menyimpan barang baru ke dalam database
-Route::post('/barang', [BarangController::class, 'store'])->name('barang.store');
-Route::get('/barang', [BarangController::class, 'index'])->name('barang.index');
+require __DIR__.'/auth.php';
 
 
-
-
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('index');
+Route::post('/dashboard', [DashboardController::class, 'index'])->name('index');
+Route::get('/deskripsi', [DeskripsiController::class, 'deskripsi'])->name('deskripsi');
+Route::get('/barang/{id}', [BarangController::class, 'show'])->name('barang.show');

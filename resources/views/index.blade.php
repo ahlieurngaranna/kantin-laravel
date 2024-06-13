@@ -25,8 +25,8 @@
                     @foreach($barang as $item)
                     <tr>
                         <td>{{ $item->nama_barang }}</td>
-                        <td><img src="{{ asset($item->gambar) }}" alt="Gambar Barang">
-        <h3>{{ $item->nama_barang }}</h3></td>
+                        <td><img src="{{ asset('storage/images/' . $item->image) }}" alt="Gambar Barang">
+        </td>
 
                         <td>{{ $item->harga }}</td>
                         <td>{{ $item->stock }}</td>

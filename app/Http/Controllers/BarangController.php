@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Barang;
+use Carbon\Carbon;
 
 class BarangController extends Controller
 {
@@ -37,7 +38,12 @@ class BarangController extends Controller
     ]);
 
     // Simpan barang baru ke dalam database
-    Barang::create($validatedData);
+    $newItem = Barang::create($validatedData);
+
+    if ($request->file('image')) {
+        $request->file('image')->move(storage_path('app/public/images'), 'barang-' . Carbon::now()->format('Y-m-d-His') . '.' . $request->file('image')->getClientOriginalExtension());
+        Barang::where('id', $newItem->id)->update(['image' => 'barang-' . Carbon::now()->format('Y-m-d-His') . '.' . $request->file('image')->getClientOriginalExtension()]);
+    }
 
     // Redirect ke halaman index barang dengan pesan sukses
     return redirect()->route('barang.index')->with('success', 'Barang berhasil ditambahkan.');

@@ -13,8 +13,13 @@ class AddImageColumnToBarangsTable extends Migration
      */
     public function up()
     {
-        Schema::table('barangs', function (Blueprint $table) {
-            $table->string('image')->nullable()->after('deskripsi');
+        Schema::create('barangs', function (Blueprint $table) {
+            $table->id();
+            $table->string('nama_barang'); // Nama barang dengan tipe string
+            $table->decimal('harga', 10, 2); // Harga dengan tipe decimal
+            $table->integer('stock'); // Stok dengan tipe integer
+            $table->text('deskripsi')->nullable(); // Deskripsi dengan tipe text dan nullable
+            $table->timestamps(); // Kolom created_at dan updated_at
         });
     }
 
@@ -25,8 +30,6 @@ class AddImageColumnToBarangsTable extends Migration
      */
     public function down()
     {
-        Schema::table('barangs', function (Blueprint $table) {
-            $table->dropColumn('image');
-        });
+        Schema::dropIfExists('barangs');
     }
 }

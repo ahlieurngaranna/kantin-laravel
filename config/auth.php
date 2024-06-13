@@ -40,8 +40,39 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+        'pemasok' => [
+            'driver' => 'session',
+            'provider' => 'pemasoks',
+        ],
+        'pembeli' => [
+            'driver' => 'session',
+            'provider' => 'pembelis',
+        ],
     ],
-
+    
+    'providers' => [
+        'users' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\User::class,
+        ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ],
+        'pemasoks' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Pemasok::class,
+        ],
+        'pembelis' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Pembeli::class,
+        ],
+    ],
+    
     /*
     |--------------------------------------------------------------------------
     | User Providers

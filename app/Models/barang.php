@@ -16,4 +16,5 @@ class Barang extends Model
         'deskripsi',
         'image', // Tambahkan image ke fillable agar dapat disimpan ke database
     ];
+    
 }

@@ -16,8 +16,8 @@
             <input type="text" name="nama_barang" id="nama_barang">
         </div>
         <div>
-    <label for="gambar">Gambar:</label>
-    <input type="file" name="gambar" id="gambar">
+    <label for="image">Gambar:</label>
+    <br><p><input type="file" name="image" id="image">
 </div>
 
         <div>

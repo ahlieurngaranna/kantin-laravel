@@ -1,14 +1,17 @@
+/* Mengatur logo di header */
 .image {
-    width: 85px; /* Lebar gambar */
-    height: auto; /* Tinggi gambar akan disesuaikan sesuai proporsi aslinya */  
+    width: 85px;
+    height: auto;
 }
 
-.garis{
-    border: none; /* Hapus garis bawaan */
-    border-top: 3px solid black; /* Ketebalan 3px, warna hitam */
-    margin: 10px 0; /* Untuk memberi jarak di atas dan di bawah garis */
+/* Mengatur garis horizontal */
+.garis {
+    border: none;
+    border-top: 3px solid black;
+    margin: 10px 0;
 }
 
+/* Menyusun menu-wrapper */
 .menu-wrapper {
     display: flex;
     align-items: center;
@@ -16,32 +19,52 @@
 }
 
 .menu-wrapper form {
-    margin-left: auto; /* Untuk memindahkan form ke sisi kanan */
+    margin-left: auto;
 }
 
 .menu-wrapper input[type="text"],
 .menu-wrapper button {
-    margin-left: 10px; /* Untuk memberikan jarak antara input dan tombol */
+    margin-left: 10px;
 }
 
-.menulist{
+/* Menyusun menulist untuk gambar barang */
+.menulist {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; /* Menambahkan jarak antar item menu */
+    justify-items: center; /* Menjaga item di tengah */
     text-align: center;
     margin: 50px auto;
     margin-bottom: 20px;
-    box-shadow: 0 0 100px rgb(0, 0, 0, 0.3);
     max-width: 1000px;
-    
 }
 
-.ukurangambarmenu{
+/* Mengatur gaya untuk setiap menu-item */
+.menu-item {
     width: 220px;
-    height: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #fff;
+    transition: transform 0.2s;
 }
 
-.footer{
+.menu-item:hover {
+    transform: scale(1.05);
+}
+
+/* Mengatur ukuran gambar agar seragam */
+.ukurangambarmenu {
+    width: 200px; /* Lebar tetap */
+    height: 200px; /* Tinggi tetap */
+    object-fit: cover; /* Menjaga proporsi gambar tanpa distorsi */
+    border-radius: 8px; /* Menyelaraskan dengan radius sudut dari menu-item */
+}
+
+/* Mengatur gaya untuk footer */
+.footer {
+    margin: 10px auto;
     text-align: center;
     background-color: rgb(159, 179, 179);
+    padding: 10px ;
 }
-
-
-
